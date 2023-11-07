@@ -5,7 +5,7 @@ import coverlg from '../assets/coverlg.svg'
 
 function Home() {
   return (
-    <div>
+    <div className='bg-slate-100'>
         <Navbar/>
         <div className='h-96 bg-slate-50 max-sm:w-full bg-no-repeat bg-contain bg-center max-sm:bottom-1 z-10 ' style={{backgroundImage: `url(${coverlg})`}} >
         </div>

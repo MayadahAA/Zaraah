@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Searchbar from "../componants/Searchbar";
 import img from "../assets/logo.svg";
 
 function Navbar() {
@@ -55,7 +54,9 @@ function Navbar() {
                 <Link to="/">Home</Link>
                 </li>
                 <li className="border-b border-gray-400 my-8 uppercase">
-                <Searchbar />
+                <Link to="/">Catalog</Link>
+                </li>
+                <li className="border-b border-gray-400 my-8 uppercase">
                 </li>
                 <li className="border-b border-gray-400 my-8 uppercase">
                 {isLogIn ? (
@@ -72,8 +73,10 @@ function Navbar() {
             <li>
             <Link to="/">Home</Link>
             </li>
+            <li >
+                <Link to="/Catalog">Catalog</Link>
+                </li>
             <li>
-            <Searchbar />
             </li>
             <li>
             {isLogIn ? (

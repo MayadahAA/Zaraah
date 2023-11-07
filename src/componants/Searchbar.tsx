@@ -6,7 +6,7 @@ interface Product {
   id: number;
   name: string;
   description: string;
-  src: string;
+  src?: string;
   price: string;
   sun: string;
 }
@@ -21,7 +21,7 @@ function Searchbar() {
     );
     setSearch(e.target.value);
     setResult({ q: e.target.value, list: results });
-  }
+  }  
   
 
   return (

@@ -4,6 +4,7 @@ import CardDetail from './pages/CardDetail'
 import Login from './componants/login'
 import Signup from './componants/signup'
 import Pagenotfound from './pages/Pagenotfound'
+import Catalog from './pages/Catalog'
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
       <Route path='/plant/:id' element={<CardDetail/>}/>
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
-
+<Route path='/Catalog' element={<Catalog/>}/>
       <Route path='*' element={<Pagenotfound />}/>
     </Routes>
     </>

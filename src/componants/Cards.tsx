@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { products } from "./productData";
+import Searchbar from "./Searchbar";
 
 const Cards: React.FC = () => {
   const [filter, setFilter] = useState(products);
@@ -25,9 +26,11 @@ const Cards: React.FC = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center gap-2 my-6 ">
+      {/* filter */}
+      <Searchbar/>
+      <div className="flex justify-around items-center p-20 ">
         <button
-          className="bg-gray-50 rounded-lg flex flex-col text-xs w-1/4 font-medium text-zinc-700 focus:bg-yellow-300 focus:ring-0 p-2 items-center"
+          className="bg-white rounded-lg flex flex-col text-xs w-1/4 font-medium text-zinc-700 focus:bg-yellow-300 focus:ring-0 p-2 items-center"
           onClick={() => btnFilter("Full Sun")}
         >
           <svg
@@ -47,7 +50,7 @@ const Cards: React.FC = () => {
           Need direct Sun
         </button>
         <button
-          className="bg-gray-50 rounded-lg flex flex-col w-1/4 text-xs font-medium text-zinc-700 focus:bg-yellow-100 focus:ring-0 p-2 items-center"
+          className="bg-white rounded-lg flex flex-col w-1/4 text-xs font-medium text-zinc-700 focus:bg-yellow-100 focus:ring-0 p-2 items-center"
           onClick={() => btnFilter("Indirect Light")}
         >
           <svg
@@ -67,7 +70,7 @@ const Cards: React.FC = () => {
           Need Indirect Light
         </button>
         <button
-          className="bg-gray-50 rounded-lg w-1/4 flex flex-col text-xs font-medium text-zinc-700 focus:bg-blue-300 focus:ring-0 p-2 items-center"
+          className="bg-white rounded-lg w-1/4 flex flex-col text-xs font-medium text-zinc-700 focus:bg-blue-300 focus:ring-0 p-2 items-center"
           onClick={() => btnFilter("Low Light")}
         >
           <svg
@@ -87,17 +90,22 @@ const Cards: React.FC = () => {
           Need Low Light{" "}
         </button>
       </div>
+
+      {/* cards */}
       <div className="flex flex-wrap max-sm:flex-col gap-20 w-full justify-center items-center">
         {filter.map((product) => (
           <div
             key={product.id}
-            className=" shadow-emerald-950/10 shadow-lg  rounded-lg m-3 w-1/4 pb-5 max-sm:w-10/12 h-1/2 gap-4 flex flex-col justify-around items-center"
+            className=" shadow-blue-950/10 shadow-lg bg-white rounded-xl m-3 w-1/4 pb-5 max-sm:w-10/12 h-1/2 gap-4 flex flex-col justify-around items-center"
           >
+            <div className="h-80 p-2">
+
             <img
               src={product.src}
               alt=""
               className="w-full h-full top-0 rounded-t-lg "
             />
+            </div>
             <h2>{product.name}</h2>
             <p>{product.price} </p>
             <Link
